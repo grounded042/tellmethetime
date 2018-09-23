@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Tell Me The Time</title>
+  <meta name="description" content="Tell me the time.">
+
+  <style type="text/css">
+  	.clock {
+	  font-size: 5em;
+	}
+  </style>
+
+  <script type="text/javascript">
+  	function clock() {
+		let time = new Date();
+		let hours = time.getHours();
+		let minutes = time.getMinutes();
+		let seconds = time.getSeconds();
+
+		document.querySelectorAll('.clock')[0].innerHTML = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+		  
+	  	function formatTime(num) {
+	  		return num < 10 ? '0' + num : num;
+	  	}
+	}
+	setInterval(clock, 1000);
+  </script>
+
+</head>
+
+<body>
+  <div class="clock"></div>
+</body>
+</html>
